@@ -1,7 +1,7 @@
-project "app"
+project "net-tactoe"
    kind "ConsoleApp"
    language "C"
-   cdialect "C99"
+   cdialect "gnu99"
    targetdir "bin/%{cfg.buildcfg}"
    staticruntime "off"
 
@@ -10,14 +10,11 @@ project "app"
    includedirs
    {
       "src",
-
-	  -- Include Core
-	  "../core/src"
    }
 
    links
    {
-      "core"
+      "pthread"
    }
 
    targetdir ("../bin/" .. OutputDir .. "/%{prj.name}")
